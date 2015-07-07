@@ -1,4 +1,4 @@
-ccrx Cookbook
+ccrx-tools Cookbook
 =============
 Installs CCRX toolchain with license manager. Also adds the toolchain to path so that it can be accessed
 anywhere.
@@ -11,20 +11,20 @@ only started releasing from V2.03.00 (Feb 2015).
 Attributes
 ----------
 ````
-default['ccrx']['compiler_installer_path'] = "C:/vagrant/installers/CC-RX_V20300_setup.exe"
-default['ccrx']['license_manager_installer_path'] = "C:/vagrant/installers/LicenseManager_setup.exe"
-default['ccrx']['e1_driver_installer_path'] = "C:/vagrant/installers/E1USBDRIVER.exe"
+default['ccrx-tools']['compiler_installer_path'] = "C:/vagrant/installers/CC-RX_V20300_setup.exe"
+default['ccrx-tools']['license_manager_installer_path'] = "C:/vagrant/installers/LicenseManager_setup.exe"
+default['ccrx-tools']['e1_driver_installer_path'] = "C:/vagrant/installers/E1USBDRIVER.exe"
 ````
 
 Usage
 -----
-Just include `ccrx` in your node's `run_list`:
+Just include `ccrx-tools` in your node's `run_list`:
 
 ```json
 {
   "name":"my_node",
   "run_list": [
-    "recipe[ccrx]"
+    "recipe[ccrx-tools]"
   ]
 }
 ```

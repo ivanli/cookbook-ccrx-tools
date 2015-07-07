@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: ccrx
+# Cookbook Name:: ccrx-tools
 # Recipe:: default
 #
 # Copyright 2015, Ivan Li
@@ -11,21 +11,21 @@ include_recipe 'windows'
 
 windows_package 'Renesas RX Compiler V2.03.00' do
   package_name 'Renesas RX Compiler V2.03.00'
-  source node['ccrx']['compiler_installer_path']
+  source node['ccrx-tools']['compiler_installer_path']
   installer_type :installshield
   action :install
 end
 
 windows_package 'Renesas License Manager' do
   package_name 'Renesas License Manager'
-  source node['ccrx']['license_manager_installer_path']
+  source node['ccrx-tools']['license_manager_installer_path']
   installer_type :installshield
   action  :install
 end
 
 windows_package 'Renesas E-Series USB Driver' do
   package_name 'Renesas E-Series USB Driver'
-  source node['ccrx']['e1_driver_installer_path']
+  source node['ccrx-tools']['e1_driver_installer_path']
   installer_type :installshield
   action  :install
 end
