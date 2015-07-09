@@ -23,12 +23,17 @@ windows_package 'Renesas License Manager' do
   action  :install
 end
 
-windows_package 'Renesas E-Series USB Driver' do
-  package_name 'Renesas E-Series USB Driver'
-  source node['ccrx-tools']['e1_driver_installer_path']
-  installer_type :installshield
-  action  :install
-end
+# Not installing the driver as it keeps returning error exit code -2147213312. No idea why.
+# Install manually for now.
+
+#windows_package 'Renesas E-Series USB Driver' do
+#  path = node['ccrx-tools']['e1_driver_installer_path']
+#  package_name 'Renesas E-Series USB Driver'
+#  source path
+#  installer_type :installshield
+#  options "-f1#{File.dirname(path)}/#{File.basename(path)}.iss"
+#  action  :install
+#end
 
 windows_path 'C:\Program Files (x86)\Renesas\RX\2_3_0\bin' do
   action :add
